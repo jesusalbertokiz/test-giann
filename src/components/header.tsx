@@ -13,15 +13,18 @@ import Drawer from "@material-ui/core/Drawer"
 import ListItem from "@material-ui/core/ListItem"
 import ListItemText from "@material-ui/core/ListItemText"
 import List from "@material-ui/core/List"
+import FacebookIcon from "@material-ui/icons/Facebook"
+import TwitterIcon from "@material-ui/icons/Twitter"
+import InstagramIcon from "@material-ui/icons/Instagram"
 
 interface Props {
   companyName: string
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(() => ({
   appBar: {
-    color: "#233348",
-    backgroundColor: "#FFF",
+    color: "#000",
+    backgroundColor: "#961BC1",
   },
   toolbar: {
     flexWrap: "wrap",
@@ -49,16 +52,16 @@ const Header = ({ companyName }: Props) => {
   }
 
   const navLinks = [
-    { displayText: "Home", link: "#" },
-    { displayText: "Services", link: "#services" },
-    { displayText: "Apps", link: "#apps" },
-    { displayText: "Testimonials", link: "#testimonials" },
-    { displayText: "Blog", link: "#blog" },
+    { displayText: "Home", link: "/" },
+    { displayText: "Descubre", link: "/discover" },
+    { displayText: "Blog", link: "/blog" },
+    { displayText: "Sobre Mi", link: "/about-me" },
+    { displayText: "Contacto", link: "/contact" },
   ]
 
   return (
     <React.Fragment>
-      <AppBar position="static" elevation={0} className={classes.appBar}>
+      <AppBar id="appBarHeader" position="static" elevation={0} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           <Hidden smUp>
             <IconButton
@@ -76,15 +79,28 @@ const Header = ({ companyName }: Props) => {
             color="inherit"
             className={classes.toolbarTitle}
           >
-            vHealth
+            ArteGiann
           </Typography>
 
           <Hidden xsDown>
-            {navLinks.map(item => (
-              <Button color="inherit" key={item.displayText}>
-                {item.displayText}
+            <div>
+              {navLinks.map(item => (
+                <Button color="inherit" href={item.link} key={item.displayText}>
+                  {item.displayText}
+                </Button>
+              ))}
+            </div>
+            <div id="social-media">
+              <Button>
+                <FacebookIcon />
               </Button>
-            ))}
+              <Button>
+                <TwitterIcon />
+              </Button>
+              <Button>
+                <InstagramIcon />
+              </Button>
+            </div>
           </Hidden>
         </Toolbar>
       </AppBar>
@@ -115,7 +131,7 @@ Header.propTypes = {
 }
 
 Header.defaultProps = {
-  companyName: `vHealth`,
+  companyName: `Artegiann`,
 }
 
 export default Header

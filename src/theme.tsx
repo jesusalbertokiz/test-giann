@@ -4,13 +4,14 @@ import { createMuiTheme } from "@material-ui/core/styles"
 const theme = createMuiTheme({
   typography: {
     subtitle1: {
-      color: "#7D7987",
+      color: "#ADB9C7",
     },
+    
   },
   palette: {
     type: "light",
     primary: {
-      main: "#458FF6",
+      main: "#C51EFF",
     },
     error: {
       main: red.A400,
@@ -20,7 +21,7 @@ const theme = createMuiTheme({
     },
     text: {
       primary: "#000",
-      secondary: "#7D7987",
+      secondary: "#fff",
       disabled: "#CCC",
       hint: "#7D7987",
     },

@@ -4,38 +4,29 @@ import Typography from "@material-ui/core/Typography"
 import Box from "@material-ui/core/Box"
 import Hidden from "@material-ui/core/Hidden"
 import Link from "@material-ui/core/Link"
-import FabDownload from "./fab-download"
+// import Button from "@material-ui/core/Button"
+// import FacebookIcon from "@material-ui/icons/Facebook"
+// import TwitterIcon from "@material-ui/icons/Twitter"
+// import InstagramIcon from "@material-ui/icons/Instagram"
+
 
 const Footer = () => {
   const footerLinks = [
     {
-      title: "Company",
+      title: "Recursos",
       items: [
-        { displayText: "About", url: "" },
+        { displayText: "Blog", url: "/blog" },
         {
-          displayText: "Testimonials",
-          url: "",
+          displayText: "Descubrir",
+          url: "/discover",
         },
-        { displayText: "Find a Doctor", url: "" },
-        { displayText: "Apps", url: "" },
       ],
     },
     {
-      title: "Region",
+      title: "Artista",
       items: [
-        { displayText: "India", url: "" },
-        { displayText: "Indonesia", url: "" },
-        { displayText: "Singapore", url: "" },
-        { displayText: "Canada", url: "" },
-      ],
-    },
-    {
-      title: "Help",
-      items: [
-        { displayText: "Help Center", url: "" },
-        { displayText: "Contact Support", url: "" },
-        { displayText: "Instructions", url: "" },
-        { displayText: "How it works", url: "" },
+        { displayText: "Sobre Mi", url: "/about-me" },
+        { displayText: "Contactame", url: "/contact" },
       ],
     },
   ]
@@ -45,10 +36,11 @@ const Footer = () => {
       <Box className="footer">
         <Grid
           container
+          justify="center"
           style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            minHeight: 250,
+            margin: `auto`,
+            maxWidth: 950,
+            minHeight: 200,
             color: "#FFF",
           }}
         >
@@ -59,17 +51,20 @@ const Footer = () => {
             container
             direction="column"
             justify="space-evenly"
-            style={{ padding: 10 }}
+            style={{ 
+              padding: 10,
+         
+              maxWidth: 300,
+              color: "#FFF",}}
           >
             <Typography variant="h4" color="inherit">
-              vHealth
+              Artegiann
             </Typography>
-            <Typography variant="body2" color="inherit">
-              vHealth provides progressive, and affordable healthcare,
-              accessible on mobile and online for everyone
+            <Typography variant="subtitle1" color="initial">
+              Giannela es una artista Venezolana apasionada por el dibujo, la pintura y los NFT
             </Typography>
-            <Typography variant="body2" color="inherit">
-              ©vHealth PTY LTD 2020. All rights reserved
+            <Typography variant="subtitle1" color="initial">
+              ©Artegiann 2022. All rights reserved
             </Typography>
           </Grid>
 
@@ -82,18 +77,51 @@ const Footer = () => {
                 container
                 direction="column"
                 justify="space-evenly"
+                alignItems="center"
+                alignContent="center"
                 key={footerMenu.title}
               >
                 <Typography variant="subtitle1" color="inherit">
                   {footerMenu.title}
                 </Typography>
                 {footerMenu.items.map(link => (
-                  <Link color="inherit" variant="body2" key={link.displayText}>
+                  <Link variant="subtitle1" color="initial" href={link.url} key={link.displayText}>
                     {link.displayText}
                   </Link>
                 ))}
               </Grid>
             ))}
+            {/* <Grid
+              item
+              xs={12}
+              sm={2}
+              container
+              direction="column"
+              justify="space-evenly"
+              alignItems="center"
+              alignContent="center"
+              key="Redes Sociales"
+            >
+              <Typography variant="subtitle1" color="inherit">
+                Redes Sociales
+              </Typography>
+              <Typography variant="subtitle1" color="initial">
+                Puedes seguirme en mis redes sociales
+              </Typography>
+              <Grid 
+              direction="row"
+              >
+                <Button>
+                  <FacebookIcon variant="subtitle1" color="initial"/>
+                </Button>
+                <Button>
+                  <TwitterIcon />
+                </Button>
+                <Button>
+                  <InstagramIcon />
+                </Button>
+              </Grid>
+            </Grid> */}
           </Hidden>
         </Grid>
       </Box>
@@ -112,27 +140,12 @@ const Footer = () => {
           alignItems="center"
         >
           <Typography variant="body2" color="inherit">
-            Created by{" "}
-            <a
-              href="https://shantanudeshmukh.com/"
-              target="_blank"
-              style={{ color: "#FFF" }}
-            >
-              Shantanu Deshmukh
-            </a>
+    
           </Typography>
           <Typography variant="body2" color="inherit">
-            Designed by
-            <a
-              href="https://dribbble.com/slabdsgn"
-              target="_blank"
-              style={{ color: "#FFF", margin: 5 }}
-            >
-              SLAB Design Studio
-            </a>
+  
           </Typography>
         </Grid>
-        <FabDownload />
       </Box>
     </React.Fragment>
   )
