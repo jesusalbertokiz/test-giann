@@ -6,7 +6,7 @@ import Image from "./image"
 import Hidden from "@material-ui/core/Hidden"
 import Bar from "./bar"
 
-const AboutPanel = () => {
+const History = () => {
   return (
     <Grid container spacing={3} style={{ minHeight: 500 }}>
       <Hidden xsDown>
@@ -21,8 +21,8 @@ const AboutPanel = () => {
         >
           <div style={{ width: "100%" }}>
             <Image
-              alt="Virtual Healthcare for you"
-              filename="about-illustration.png"
+              alt="Unifree, la historia de la universidad mas aterradora del mundo"
+              filename="university.png"
             />
           </div>
         </Grid>
@@ -38,22 +38,23 @@ const AboutPanel = () => {
         style={{ paddingLeft: 40, paddingRight: 40 }}
       >
         <Typography variant="h4" color="inherit">
-          Leading healthcare providers
+          Unifree, la historia de la universidad mas aterradora del mundo
         </Typography>
         <Bar />
         <Typography
           variant="subtitle1"
           style={{ marginBottom: 30, marginTop: 20 }}
         >
-          We provide progressive, and affordable healthcare, accessible on
-          mobile and online for everyone. To us, it’s not just work. We take
-          pride in the solutions we deliver
+          Esta universidad fue pionera en el campo de la mutación genética en una epoca
+          donde la humanidad casi se extingue por culpa de un virus letal. Fue gracias
+          a los genes de algunos animales que eran inmunes a la enfermedad lo que hizo que el 
+          campo de la medicina y el mundo como se conocia cambiara radicalmente.
         </Typography>
-        <Button variant="outlined" color="primary" size="large">
-          Learn More
+        <Button variant="outlined" href="/history-unifree" color="primary" size="large">
+          Ver Historia
         </Button>
       </Grid>
     </Grid>
   )
 }
-export default AboutPanel
+export default History

@@ -2,12 +2,11 @@ import React from "react"
 import Grid from "@material-ui/core/Grid"
 import Typography from "@material-ui/core/Typography"
 import Button from "@material-ui/core/Button"
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
 import Image from "./image"
 import Hidden from "@material-ui/core/Hidden"
 import Bar from "./bar"
 
-const AppsPanel = () => {
+const About = () => {
   return (
     <Grid container spacing={3} style={{ minHeight: 500 }}>
       <Grid
@@ -21,24 +20,25 @@ const AppsPanel = () => {
         style={{ paddingLeft: 40, paddingRight: 40 }}
       >
         <Typography variant="h4" color="inherit">
-          Download our mobile apps
+          Artegiann es más que una artista...
         </Typography>
         <Bar />
         <Typography
           variant="subtitle1"
           style={{ marginBottom: 30, marginTop: 20 }}
         >
-          Our dedicated patient engagement app and web portal allow you to
-          access information instantaneously (no tedious form, long calls, or
-          administrative hassle) and securely
+          Giannela se siente muy vinculada con su trabajo porque al crear lo hace con pasión,
+          todos sus trabajos llevan una parte de su escencia y de lo que sienta en el momento de crearlos,
+          Haciendolos unicos y especiales.
         </Typography>
         <Button
           variant="outlined"
           color="primary"
           size="large"
-          endIcon={<ArrowDownwardIcon />}
+          href="/about-me"
+          
         >
-          Download
+          Conoce más Sobre Giannela
         </Button>
       </Grid>
 
@@ -52,10 +52,10 @@ const AppsPanel = () => {
           alignItems="flex-start"
           style={{ padding: 10 }}
         >
-          <div style={{ width: "100%" }}>
+          <div style={{ width: "70%" }}>
             <Image
-              alt="Virtual Healthcare for you"
-              filename="apps-panel-image.png"
+              alt="VGiannela, una artista única"
+              filename="giannela.png"
             />
           </div>
         </Grid>
@@ -63,4 +63,4 @@ const AppsPanel = () => {
     </Grid>
   )
 }
-export default AppsPanel
+export default About

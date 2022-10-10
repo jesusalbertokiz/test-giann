@@ -4,11 +4,11 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import Services from "../components/services"
-import AboutPanel from "../components/about-panel"
+import History from "../components/history"
 import Articles from "../components/articles"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
 import theme from "../theme"
-import AppsPanel from "../components/apps-panel"
+import About from "../components/about"
 
 const IndexPage = () => (
   <React.Fragment>
@@ -17,8 +17,8 @@ const IndexPage = () => (
         <SEO title="Home" />
         <Hero />
         <Services />
-        <AboutPanel />
-        <AppsPanel />
+        <History />
+        <About />
         {/* <Testimonials /> */}
         <Articles />
       </Layout>

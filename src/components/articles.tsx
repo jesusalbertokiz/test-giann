@@ -8,26 +8,40 @@ import Bar from "./bar"
 const Articles = () => {
   const articles = [
     {
-      title: "Disease detection, check up in the laboratory",
+      title: "Unifree, la historia de la universidad mas aterradora del mundo",
       description:
         "In this case, the role of the health laboratory is very important to do a disease detection...",
-      url: "",
-      image: "blog1.png",
+      url: "/history-unifree",
+      image: "university.png",
     },
     {
-      title: "Herbal medicines that are safe for consumption",
+      title: "Unifree, la historia de la universidad mas aterradora del mundo",
       description:
-        "Herbal medicine is very widely used at this time because of its very good for your health...",
-      url: "",
-      image: "blog2.png",
+        "In this case, the role of the health laboratory is very important to do a disease detection...",
+      url: "/history-unifree",
+      image: "university.png",
     },
     {
-      title: "Natural care for healthy facial skin",
+      title: "Unifree, la historia de la universidad mas aterradora del mundo",
       description:
-        "A healthy lifestyle should start from now and also for your skin health. There are some...",
-      url: "",
-      image: "blog3.png",
+        "In this case, the role of the health laboratory is very important to do a disease detection...",
+      url: "/history-unifree",
+      image: "university.png",
     },
+    // {
+    //   title: "Herbal medicines that are safe for consumption",
+    //   description:
+    //     "Herbal medicine is very widely used at this time because of its very good for your health...",
+    //   url: "",
+    //   image: "blog2.png",
+    // },
+    // {
+    //   title: "Natural care for healthy facial skin",
+    //   description:
+    //     "A healthy lifestyle should start from now and also for your skin health. There are some...",
+    //   url: "",
+    //   image: "blog3.png",
+    // },
   ]
 
   return (
@@ -40,7 +54,7 @@ const Articles = () => {
         justify="center"
         alignItems="center"
       >
-        <Typography variant="h5">Check out our latest articles</Typography>
+        <Typography variant="h5">Puedes ver los últimos Post publicados</Typography>
         <Bar />
       </Grid>
       {articles.map(article => (
@@ -50,8 +64,8 @@ const Articles = () => {
       ))}
 
       <Grid item xs={12}>
-        <Button variant="outlined" color="primary" size="large">
-          Veiw All
+        <Button variant="outlined" href="/blog" color="primary" size="large">
+          Ir al blog
         </Button>
       </Grid>
     </Grid>

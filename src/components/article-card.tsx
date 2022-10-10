@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography"
 import CardActions from "@material-ui/core/CardActions"
 import Button from "@material-ui/core/Button"
 import Image from "./image"
-import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt"
 
 interface IProps {
   article: Article
@@ -21,21 +20,21 @@ interface Article {
 
 const ArticleCard = ({ article, ...props }: IProps) => {
   return (
-    <Card>
+    <Card style={{backgroundColor: "#36414C", minWidth:"230px"}}>
       <CardMedia image={article.image}>
         <Image alt={article.title} filename={article.image} />
       </CardMedia>
       <CardContent style={{ textAlign: "start" }}>
-        <Typography variant="h6" color="inherit">
+        <Typography style={{ textAlign: "center", color:"#fff", margin:"0  0 25px 0"}} variant="h5">
           {article.title}
         </Typography>
-        <Typography variant="body2" color="textSecondary" component="p">
+        <Typography variant="body1" color="textPrimary" component="p">
           {article.description}
         </Typography>
       </CardContent>
-      <CardActions style={{ paddingLeft: 20 }}>
-        <Button size="small" color="primary">
-          Read More <ArrowRightAltIcon style={{ marginLeft: 5 }} />
+      <CardActions style={{ width: "90%",margin:"0  0 25px 0", justifyContent:"center" }}>
+        <Button variant="contained" size="small" color="primary" href={article.url}>
+          Leer Más         
         </Button>
       </CardActions>
     </Card>

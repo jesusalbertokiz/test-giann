@@ -26,42 +26,90 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-///////////////////////////////////////////
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   
-  const blogpostTemplate = path.resolve(`./src/templates/blogpost.js`);
+  const personajesTemplate = path.resolve(`./src/templates/personaje.js`);
   return graphql(`
-    {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-            }
+  {
+    allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/personajes\//"}}) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
           }
         }
       }
     }
+  }
+    
   `)
   .then(result => {
     if (result.errors) throw result.errors;
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const personaje = result.data.allMarkdownRemark.edges;
 
-    posts.forEach((post, index) => {
+    personaje.forEach((personaje, index) => {
       createPage({
-        path: post.node.fields.slug,
-        component: blogpostTemplate,
+        path: personaje.node.fields.slug,
+        component: personajesTemplate,
         context: {
-          slug: post.node.fields.slug,
-        },
+          slug: personaje.node.fields.slug,
+          },
+        });
       });
+  
+      return null;
     });
+  };
 
-    return null;
-  });
-};
+
+// exports.createPages = ({ graphql, actions }) => {
+//   const { createPage } = actions;
+  
+//   const blogTemplate = path.resolve(`./src/templates/blog.js`);
+//   return graphql(`
+  // {
+  //   allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/\/blog\//"}}) {
+  //     edges {
+  //       node {
+  //         fields {
+  //           slug
+  //         }
+  //         frontmatter {
+  //           title
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+    
+//   `)
+//   .then(result => {
+//     if (result.errors) throw result.errors;
+
+//     const blog = result.data.allMarkdownRemark.edges;
+
+//     blog.forEach((blog, index) => {
+//       createPage({
+//         path: blog.node.fields.slug,
+//         component: blogTemplate,
+//         context: {
+//           slug: blog.node.fields.slug,
+//           },
+//         });
+//       });
+  
+//       return null;
+//     });
+//   };
+
+
+///////////////////////////////////////////
+
+
+  ///////////////////////////////////////////////////////////////////

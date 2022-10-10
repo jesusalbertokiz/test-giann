@@ -30,14 +30,16 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Hero from "../components/hero"
+
 // import Services from "../components/services"
 // import AboutPanel from "../components/about-panel"
 // import Testimonials from "../components/testimonials"
 // import Articles from "../components/articles"
 // import AppsPanel from "../components/apps-panel"
 import ThemeProvider from "@material-ui/styles/ThemeProvider"
+import Typography from "@material-ui/core/Typography"
 import theme from "../theme"
+import Image from "../components/image"
 import { graphql } from 'gatsby';
 
 export const query = graphql`
@@ -46,8 +48,7 @@ query PostQuery($slug: String!) {
     html
     frontmatter {
       title
-      description
-      date
+      image
     }
   }
 }
@@ -56,24 +57,22 @@ query PostQuery($slug: String!) {
 
 const IndexPage = (props) => {
   const post = props.data.markdownRemark;
-  const { title, description, date } = post.frontmatter;
-  return(
+  const { title,  image } = post.frontmatter;
+
+     return(
 
   <React.Fragment>
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="Home" />
-        <Hero />
-        {/* <Services />
-        <AboutPanel />
-        <AppsPanel /> */}
-        {/* <Testimonials /> */}
-        {/* <Articles /> */}
-        <div>
-          <h1>{title}</h1>
-          <i>{description}</i> - <small>{date}</small>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </div>
+        <SEO title={title} />
+        <Typography style={{marginTop:"3rem", textAlign:"center", fontSize:"3rem"}} variant="h1">{title}</Typography>
+        <div style={{height:"100%", maxWidth: "400px", margin:"0 auto"}}>
+            <Image
+              alt="Unifree, la historia de la universidad mas aterradora del mundo"
+              filename={image}
+            />
+          </div>
+        <Typography style={{color:"#ADB9C7"}} dangerouslySetInnerHTML={{ __html: post.html }}></Typography>
       </Layout>
     </ThemeProvider>
   </React.Fragment>
