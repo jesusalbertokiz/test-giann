@@ -38,7 +38,7 @@ const IndexPage = (props) => {
               filename={image}
             />
           </div>
-        <Typography style={{color:"#ADB9C7"}} dangerouslySetInnerHTML={{ __html: post.html }}></Typography>
+        <div style={{color:"#ADB9C7"}} dangerouslySetInnerHTML={{ __html: post.html }}></div>
       </Layout>
     </ThemeProvider>
   </React.Fragment>
