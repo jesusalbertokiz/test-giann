@@ -65,7 +65,7 @@ const IndexPage = (props) => {
     <ThemeProvider theme={theme}>
       <Layout>
         <Seo title={title} />
-        <Typography style={{marginTop:"3rem", textAlign:"center", fontSize:"3rem"}} variant="h1">{title}</Typography>
+	     <Typography style={{marginTop:"3rem", textAlign:"center", fontSize:"3rem"}} variant="h1">{title}</Typography>
         <div style={{height:"100%", maxWidth: "400px", margin:"0 auto"}}>
             <Image
               alt="Unifree, la historia de la universidad mas aterradora del mundo"
