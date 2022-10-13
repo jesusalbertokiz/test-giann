@@ -29,7 +29,7 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 // import Services from "../components/services"
 // import AboutPanel from "../components/about-panel"
@@ -64,7 +64,7 @@ const IndexPage = (props) => {
   <React.Fragment>
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title={title} />
+        <Seo title={title} />
         <Typography style={{marginTop:"3rem", textAlign:"center", fontSize:"3rem"}} variant="h1">{title}</Typography>
         <div style={{height:"100%", maxWidth: "400px", margin:"0 auto"}}>
             <Image
